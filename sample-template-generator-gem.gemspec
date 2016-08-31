@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Prototype for generating spreadsheet templates for use with SEEK.}
   spec.homepage      = "http://seek4science.org"
-  spec.license = "BSD-3-Clause" # https://spdx.org/licenses/BSD-3-Clause.html#licenseText
+  spec.license       = "BSD-3-Clause" # https://spdx.org/licenses/BSD-3-Clause.html#licenseText
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -26,7 +26,6 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-
 
   spec.add_dependency(%q<open4>, ["= 1.3.0"])
   spec.add_dependency(%q<rdoc>, [">= 0"])

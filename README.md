@@ -1,36 +1,11 @@
-# Sample::Template::Generator::Gem
+# Sample Template Generator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sample/template/generator/gem`. To experiment with that code, run `bin/console` for an interactive prompt.
+A very simple prototype of generating an Excel Template based upon Sample Type information in [SEEK](http://seekscience.org)
 
-TODO: Delete this and the text above, and describe your gem
+This is currently very basic and scruffy prototyping work.
 
-## Installation
+SEEK is developed as part of [FAIRDOM](http://fair-dom.org)
 
-Add this line to your application's Gemfile:
+SEEK github repository can be found at https://github.com/seek4science/seek
 
-```ruby
-gem 'sample-template-generator-gem'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sample-template-generator-gem
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sample-template-generator-gem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+FAIRDOM runs the [FAIRDOMHub](https://fairdomhub.org) which is a public instance of SEEK for scientific research
