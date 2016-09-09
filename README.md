@@ -1,8 +1,6 @@
 # Sample Template Generator
 
-[![Code Climate](https://codeclimate.com/github/seek4science/sample-template-generator-gem/badges/gpa.svg)](https://codeclimate.com/github/seek4science/sample-template-generator-gem)
-
-[![Build Status](https://travis-ci.org/seek4science/sample-template-generator-gem.svg?branch=master)](https://travis-ci.org/seek4science/sample-template-generator-gem)
+[![Code Climate](https://codeclimate.com/github/seek4science/sample-template-generator-gem/badges/gpa.svg)](https://codeclimate.com/github/seek4science/sample-template-generator-gem)  [![Build Status](https://travis-ci.org/seek4science/sample-template-generator-gem.svg?branch=master)](https://travis-ci.org/seek4science/sample-template-generator-gem)
 
 
 A very simple prototype of generating an Excel Template based upon Sample Type information in [SEEK](http://seekscience.org)
