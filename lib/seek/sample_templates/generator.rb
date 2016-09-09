@@ -2,13 +2,12 @@ require 'open4'
 
 module Seek
   module SampleTemplates
-
-    def self.generate(sheet_name,sheet_index,columns,path)
-      Seek::SampleTemplates::Generator.new(path,create_json(columns, sheet_index, sheet_name)).generate
+    def self.generate(sheet_name, sheet_index, columns, path)
+      Seek::SampleTemplates::Generator.new(path, create_json(columns, sheet_index, sheet_name)).generate
     end
 
     def self.create_json(columns, sheet_index, sheet_name)
-      {:sheet_name => sheet_name, :sheet_index => sheet_index, :columns => columns}.to_json
+      { sheet_name: sheet_name, sheet_index: sheet_index, columns: columns }.to_json
     end
 
     class Generator
