@@ -12,7 +12,15 @@ class SampleTemplateGeneratorTest < Minitest::Test
   end
 
   def test_main_entry
+    refute(File.exist?(@path))
     Seek::SampleTemplates.generate('fred', 0, [], @path)
+    assert(File.exist?(@path))
+  end
+
+  def test_generate_with_columns_names
+    refute(File.exist?(@path))
+    columns = [Seek::SampleTemplates::Column.new('fred'),Seek::SampleTemplates::Column.new('barry'),Seek::SampleTemplates::Column.new('alice')]
+    Seek::SampleTemplates.generate('samples', 0, columns, @path)
     assert(File.exist?(@path))
   end
 

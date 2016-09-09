@@ -7,7 +7,19 @@ module Seek
     end
 
     def self.create_json(columns, sheet_index, sheet_name)
-      { sheet_name: sheet_name, sheet_index: sheet_index, columns: columns }.to_json
+      { sheet_name: sheet_name, sheet_index: sheet_index, columns: columns.collect(&:as_json) }.to_json
+    end
+
+    class Column
+      attr_accessor :name, :contents
+      def initialize(name, contents = [])
+        @name = name
+        @contents = contents
+      end
+
+      def as_json
+        { @name => @contents }
+      end
     end
 
     class Generator
@@ -22,7 +34,7 @@ module Seek
         @path = path
         @json = json
         @memory_allocation = memory_allocation
-        raise Exception, 'Windows is not currently supported' if is_windows?
+        raise Exception, 'Windows is not currently supported' if windows?
       end
 
       def generate
@@ -43,7 +55,7 @@ module Seek
         err_message = ''
         command = command()
         status = Open4.popen4(command) do |_pid, _stdin, stdout, stderr|
-          while (line = stdout.gets(BUFFER_SIZE)) != nil
+          until (line = stdout.gets(BUFFER_SIZE)).nil?
             output << line
           end
           stdout.close
@@ -59,7 +71,7 @@ module Seek
         output.strip
       end
 
-      def is_windows?
+      def windows?
         !(RUBY_PLATFORM =~ /mswin32/ || RUBY_PLATFORM =~ /mingw32/).nil?
       end
     end
