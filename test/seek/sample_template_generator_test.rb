@@ -9,8 +9,12 @@ class SampleTemplateGeneratorTest < Minitest::Test
     path="/tmp/sample-generator-test.xlsx"
     File.delete(path) if File.exists?(path)
     refute(File.exists?(path))
-    Seek::SampleTemplateGenerator.new(path,json).generate
+    Seek::SampleTemplates::Generator.new(path,json).generate
     assert(File.exists?(path))
+  end
+
+  def test_that_it_has_a_version_number
+    refute_nil Seek::SampleTemplates::VERSION
   end
 
 end

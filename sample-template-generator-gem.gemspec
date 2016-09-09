@@ -1,12 +1,12 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sample/template/generator/gem/version'
+require 'seek/sample_templates/version'
 
 
 Gem::Specification.new do |spec|
   spec.name          = "sample-template-generator-gem"
-  spec.version       = Sample::Template::Generator::Gem::VERSION
+  spec.version       = Seek::SampleTemplates::VERSION
   spec.authors       = ["Stuart Owen"]
   spec.email         = ["stuart.owen@manchester.ac.uk"]
 
