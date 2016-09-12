@@ -23,7 +23,7 @@ module Seek
     end
 
     class Generator
-      JAR_VERSION = '0.1'.freeze
+      JAR_VERSION = '0.2'.freeze
       JAR_PATH = File.dirname(__FILE__) + "/../../../jars/sample-template-generator-#{JAR_VERSION}.jar"
       DEFAULT_MEMORY_ALLOCATION = '512M'.freeze
       BUFFER_SIZE = 250_000 # 1/4 a megabyte
