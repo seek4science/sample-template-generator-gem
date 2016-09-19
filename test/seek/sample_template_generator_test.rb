@@ -17,6 +17,14 @@ class SampleTemplateGeneratorTest < Minitest::Test
     assert(File.exist?(@path))
   end
 
+  def test_invalid_json
+    json = { 'fish' => 'soup' }.to_json
+
+    assert_raises(RuntimeError) do
+      Seek::SampleTemplates::Generator.new(@path, json).generate
+    end
+  end
+
   def test_generate_with_columns_names
     refute(File.exist?(@path))
     columns = [Seek::SampleTemplates::Column.new('fred'), Seek::SampleTemplates::Column.new('barry'), Seek::SampleTemplates::Column.new('alice')]
