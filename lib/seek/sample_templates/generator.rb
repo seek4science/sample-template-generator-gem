@@ -6,7 +6,7 @@ module Seek
     # Generally this shouldn't be used directly, but instead should be used
     # through Seek::SampleTemplates.generate(..)
     class Generator
-      JAR_VERSION = '0.2'.freeze
+      JAR_VERSION = '0.3'.freeze
       JAR_PATH = File.dirname(__FILE__) +
                  "/../../../jars/sample-template-generator-#{JAR_VERSION}.jar"
       DEFAULT_MEMORY_ALLOCATION = '512M'.freeze
