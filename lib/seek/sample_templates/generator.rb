@@ -1,4 +1,5 @@
 require 'cocaine'
+require 'shellwords'
 
 module Seek
   module SampleTemplates
@@ -28,8 +29,8 @@ module Seek
 
       def command
         command = "java -Xmx#{@memory_allocation} -jar #{JAR_PATH}"
-        command += " -f '#{path}'"
-        command += " -j '#{json}'"
+        command += " -f #{Shellwords.escape(path)}"
+        command += " -j #{Shellwords.escape(json)}"
         command
       end
 
