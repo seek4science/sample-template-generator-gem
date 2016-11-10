@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'seek/sample_templates/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'sample-template-generator-gem'
+  spec.name          = 'sample-template-generator'
   spec.version       = Seek::SampleTemplates::VERSION
   spec.authors       = ['Stuart Owen']
   spec.email         = ['stuart.owen@manchester.ac.uk']
