@@ -33,7 +33,7 @@ class SampleTemplateGeneratorTest < Minitest::Test
   end
 
   def test_generator_call
-    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ['name'=>['fred','bob']] }.to_json
+    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ['name' => %w(fred bob)] }.to_json
 
     refute(File.exist?(@path))
     Seek::SampleTemplates::Generator.new(@path, json).generate
@@ -52,7 +52,7 @@ class SampleTemplateGeneratorTest < Minitest::Test
   end
 
   def test_generator_call_with_quotes
-    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ["with a ' quote"=>[]] }.to_json
+    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ["with a ' quote" => []] }.to_json
 
     refute(File.exist?(@path))
     Seek::SampleTemplates::Generator.new(@path, json).generate
@@ -60,11 +60,19 @@ class SampleTemplateGeneratorTest < Minitest::Test
   end
 
   def test_generator_call_with_quotes2
-    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ["apples"=>["Cox's apple"]] }.to_json
+    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ['apples' => ["Cox's apple"]] }.to_json
 
     refute(File.exist?(@path))
     Seek::SampleTemplates::Generator.new(@path, json).generate
     assert(File.exist?(@path))
   end
 
+  def test_with_base_template
+    base_template_path = File.join(File.dirname(__FILE__), 'files', 'test-base-template.xlsx')
+    assert File.exist?(base_template_path), "cannot find base file at #{base_template_path}"
+    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ['name' => %w(fred bob)], 'base_template_path' => base_template_path }.to_json
+    refute(File.exist?(@path))
+    Seek::SampleTemplates::Generator.new(@path, json).generate
+    assert(File.exist?(@path))
+  end
 end
