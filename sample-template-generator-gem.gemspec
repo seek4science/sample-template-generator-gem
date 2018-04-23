@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency('rdoc', ['~> 6.0'])
-  spec.add_dependency('cocaine', ['~> 0.5'])
+  spec.add_dependency('terrapin', ['~> 0.6'])
 
   spec.add_development_dependency('rubocop', ['~> 0.48'])
   spec.add_development_dependency('rubycritic', ['~> 3.2'])

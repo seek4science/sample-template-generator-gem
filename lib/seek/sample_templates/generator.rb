@@ -1,4 +1,4 @@
-require 'cocaine'
+require 'terrapin'
 require 'shellwords'
 
 module Seek
@@ -35,9 +35,9 @@ module Seek
       end
 
       def run_with_cocaine
-        output = Cocaine::CommandLine.new(command).run
+        output = Terrapin::CommandLine.new(command).run
         output.strip
-      rescue Cocaine::ExitStatusError => exception
+      rescue Terrapin::ExitStatusError => exception
         raise exception.message
       end
     end
