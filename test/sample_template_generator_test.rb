@@ -76,11 +76,19 @@ class SampleTemplateGeneratorTest < Minitest::Test
   end
 
   def test_generator_call_with_quotes2
-    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ['apples' => ["Cox's apple"]] }.to_json
+    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ['apples' => ["Cox's apple", "Fred's pear"]] }.to_json    
 
     refute(File.exist?(@path))
     Seek::SampleTemplates::Generator.new(@path, json).generate
     assert(File.exist?(@path))
+  end
+
+  def test_generator_call_with_commas
+    json = { 'sheet_name' => 'fred', 'sheet_index' => 0, 'columns' => ['colours' => ["red, green", "blue"]] }.to_json    
+
+    refute(File.exist?(@path))
+    Seek::SampleTemplates::Generator.new(@path, json).generate
+    assert(File.exist?(@path))  
   end
 
   def test_generator_with_base_template
