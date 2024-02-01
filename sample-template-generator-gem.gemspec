@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency('rdoc', ['~> 6.0'])
-  spec.add_dependency('terrapin', ['~> 0.6'])
+  spec.add_dependency('terrapin', ['~>1.0'])
 
   spec.add_development_dependency('rubocop', ['~> 1.25'])
   spec.add_development_dependency 'bundler', '~> 2.4'
